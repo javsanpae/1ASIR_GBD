@@ -1,0 +1,99 @@
+﻿/*RELACION 2 SQL (JEFA/MUSICA)*/
+
+/*1 Relaci�n de alumnos (nombre, apellido1 y apellido2) que est�n matriculados en secundaria */
+
+/*2 Alumnos con edades entre 12 y 15 a�os */
+
+/*3 Sacar los grupos (identificador de curso y letra) donde el tutor sea ZBM, FOJ o ZPM */
+
+SELECT IdCurso, Letra
+FROM Grupos
+WHERE TUTOR IN ('EME', 'FOJ', 'VMR');
+
+/*3.2 Adem�s, sacar el nombre del tutor */
+
+/*4 �Qu� lecciones se imparten en alg�n laboratorio? 
+(Que el c�digo del aula empiece por "L"). Sacar la lecci�n y aula.*/`
+
+--4.2 Adem�s, sacar el c�digo de profesor.
+
+/*5 �Qu� aulas est�n ocupadas el lunes a sexta hora? */
+
+/*6 Sacar los d�as y las horas de ocupaci�n del aula 209 */
+
+/*7 �En qu� asignatura esta matriculada Cruz Martin, Susana? */
+
+SELECT IdAsig
+FROM ALUMNOS_MATERIAS
+WHERE Nexp = (SELECT Nexp FROM ALUMNOS WHERE Apellido1 = 'Cruz' AND Apellido2 = 'Martin' AND Nombre = 'Susana'= AND Estado = 'M';
+
+/*7.2 Sacar, adem�s, el nombre (denominaci�n) de la asignatura.*/
+				  		
+/*8 Relaci�n de autores y �lbumes y duraci�n cuya duraci�n este entre los 40 y 60m */
+
+/*9 Relaci�n de CDs en los que haya m�sica de Caf� Quijano o de King �frica */
+
+/*10 Obtener la edad media de los alumnos matriculados en cursos de la ESO */
+
+/*11 �Cu�ntos alumnos cursan estudios de Administrativo? */
+
+/*12 �Cu�ntas horas de clase da el profesor VMR? */
+
+/*12.2 Sacar el n�mero de horas de clase para cada una 
+de las asignaturas que imparte VMR */
+
+/*12.3 Sacar los c�digos de las asignaturas que imparte VMR */
+
+/*12.4 Sacar el c�digo y denominaci�n de las asignaturas que imparte VMR*/
+
+/*12.5 Adem�s, sacar el nombre del profesor. */
+
+/*13 �C�mo se llama al alumno de mayor edad que le da clase EME? */
+ 
+/*14 Sacar los diez apellido1 y apellido2 que m�s se repiten */
+
+/*15 �De qu� autores tenemos menos de 90 minutos de m�sica?  */
+
+/*16 Sacar todos los CDs y su duraci�n total */
+
+/*17 �Qu� autor y album es el m�s repetido? */ 
+
+/*18 �De qu� albumes hay s�lo una copia? */
+
+/*19 �Cu�ntos autores diferentes tenemos? */
+
+/*20 �Cu�ntos autor m�s album diferentes tenemos? */
+Complejo, lo hace profe
+
+/*21 Sacar el nombre de los albumes de Pink Floyd */
+
+/*22 Sacar los CDs donde haya musica de ABBA */
+
+/*23 �De qu� autores tenemos m�s de 5 albumes? Sacar autor y n�mero de �lbumes. */
+
+/*23.2 �Y si nos piden que autores tienen mas de 5 albumes diferentes?*/
+
+/*24 �Cu�l es el n�mero de albumes de cada autor? */
+
+/*24.2 Ahora con �lbumes distintos. */
+
+/*25 Media de albumes distintos, por autor */
+lo vams a hacer por partes:
+
+/*26 �Qu� CDs de 74 minutos de duraci�n tienen m�sica de Joaqu�n Sabina? */
+	
+/*26.2 Vamos a hacerlo bien, incluyendo cada condici�n en su correspondiente tabla*/
+
+/*27 Sacar la abreviatura y nombre de las asignaturas que imparten 
+los profesores llamados Manuel */
+
+/*28 Sacar la lista de la clase de la asignatura 1102 (apellido1, apellido2 y nombre) 
+ordenados alfab�ticamente */
+
+-- 28.2  Idem, pero de la asignatura SBD
+
+/*29 �Cu�l es la longitud total de los CDs donde hay m�sica de Mecano? */
+
+/*30 Sacar aquellos �lbumes cuya duraci�n es mayor que la media */
+
+...

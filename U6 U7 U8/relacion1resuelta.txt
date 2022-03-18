@@ -1,0 +1,120 @@
+* 1. Obtener todos los nombres de los proveedores*/
+select Nombre from Datos_J
+
+/* 2. Obtener aquellos proveedores cuyo status es mayor que 2*/
+select Nombre, Status from Datos_S
+where Status > 2;
+
+/* 3. Obtener el nombre de los proveedores que suministran la pieza P1 */
+select nombre, IdP from Datos_P
+where IdP = 'P1';
+
+/* 4. Obtener el nombre de los proveedores cuyo nombre acabe en “ez” */
+select Nombre from Datos_S
+where Nombre like '%ez';
+
+/* 5. Obtener el nombre de aquellos individuos que tienen el estatus máximo*/
+select Nombre, Status from Datos_S
+where Status = (select MAX (Status)
+from Datos_S);
+
+/* 6. Obtener aquellos proveedores cuya ciudad es la ciudad de S1 o S2*/
+select Nombre from Datos_S
+where IdS = 'S1'
+or IdS = 'S2';
+
+/* 7. Encontrar aquellos proveedores, tales que las piezas que suministran están
+incluidas en el conjunto de piezas de J1 */
+select  IdS from Datos_SPJ
+where IdJ = 'J1';
+--Con esto sacamos que IdS tienen los proveedores--
+select Nombre from Datos_S
+where IdS in (select IdS from Datos_SPJ where IdJ = 'J1');
+--Ahora lo ordeno de menor a mayor--
+Order by IdS desc
+--(Para casa)Consulta multitablas tambien llamado producto cartesiano--
+select nombre from Datos_SPJ, Datos_S
+where Datos_S.IdS = Datos_SPJ.IdS
+and Datos_SPJ.IdJ = 'J1';
+
+/* 8. Encontrar aquellos proyectos que no reciben ningún suministro cantidad mayor o
+igual a 300 */
+select Nombre from Datos_P
+where IdP in (select IdP from Datos_SPJ where Cantidad < 300);
+
+/* 9. Encontrar aquellos proveedores que tienen un status mayor que el de S7*/
+select Nombre from Datos_S
+where Status > (select Status
+from Datos_S where IdS = 'S7');
+Creo que esta bien
+
+/* 10. Encontrar aquellos proveedores que tienen un status mayor que el de todos los
+proveedores de Madrid*/
+select Nombre from Datos_S
+where Status > ALL (select Status from Datos_S where Ciudad = 'Madrid');
+
+/* 11. Encontrar aquellas piezas cuyo color es rojo, gris o blanco */
+select Nombre
+from Datos_P
+where Color IN ('Blanco', 'Gris', 'Rojo');
+
+/* 12. Encontrar aquellos proveedores que viven en la misma ciudad que el proveedor que
+suministra papel*/
+select Nombre from Datos_S
+where Ciudad = (Select Ciudad from Datos_P where IdP = 'P1');
+
+/* 13. Encontrar aquellos proveedores que no suministran papel */
+select IdS
+from Datos_SPJ
+where IdS = ANY(select IdS from Datos_SPJ where IdP = 'P1')
+
+select Nombre
+from Datos_S
+where IdS IN (select IdS
+from Datos_SPJ
+where IdP = ('P1'));
+
+Solo salen los que venden papel
+
+/* 14. Encontrar aquel proveedor que suministra todas la piezas rojas
+(DIVISIÓN = COMPLICADO!!) */
+select Nombre
+from Datos_S
+where IdS IN (select IdS
+from Datos_SPJ
+where IdP = ('P4'));
+
+select Nombre
+from Datos_S
+where IdS IN (select Color
+from Datos_P
+where Color = ('Rojo'));
+
+/* 15. Número de suministros realizados al proyecto J2 por S1 */
+select IdS, IdJ, Cantidad
+from Datos_SPJ
+where IdS= 'S1' AND IdJ = 'J2'
+
+
+/* 16. Calcular la media de peso de las piezas cuyo nombre comience por “Estuche” */
+select AVG(Peso)
+from Datos_P
+where Nombre = 'Estuche';
+????????????????
+
+/*17. Encontrar los códigos y las cantidades (de envíos) máximas de aquellos proveedores
+que han enviado piezas rojas, agrupados por el código de empleado y el código de pieza */
+/* 18. Encontrar los códigos de los proveedores, de las piezas y las cantidades de envíos
+máximas de aquellos que han enviado/suministrado piezas rojas, agrupados por código de
+proveedor y código de pieza, pero sólo de aquellos donde la máxima cantidad sea mayor que
+25 */
+/* 19. Obtener el nombre de todas las piezas en orden ascendente */
+select Nombre
+from Datos_P
+order by nombre asc;
+/* 20. Obtener la tabla resumen del número de suministros realizados a cada uno de los
+proyectos realizados por cada vendedor */
+/* 21. Borrar todos los suministros asociados a J3 */
+/* 22. Insertar en la tabla de proveedores el siguiente proveedor:
+S15 Luis Sánchez Chaves 2 Granada */
+/* 23. Modifica la ciudad de S1 a Madrid*/

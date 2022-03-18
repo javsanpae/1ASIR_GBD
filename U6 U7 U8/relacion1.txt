@@ -1,0 +1,62 @@
+--RELACION 1  DE SQL (SPJ)
+
+-- 1. Obtener todos los nombres de los proveedores
+
+--	SELECT *
+--	FROM Datos_S
+
+-- 2. Obtener aquellos proveedores cuyo status es mayor que 20
+
+--	SELECT *
+--	FROM Datos_S
+--	WHERE Status>20
+
+-- 3. Obtener el nombre de los proveedores que suministran la pieza P1
+-- NO RESUELTO
+--	SELECT Nombre
+--	ON Datos_S
+--	FROM Datos_SPJ
+--	WHERE IdP='p1'
+
+-- 4. Obtener el nombre de los proveedores cuyo nombre acabe en "ez"
+
+--	SELECT Nombre
+--	FROM Datos_S
+--	WHERE Nombre LIKE '%ez'
+
+-- 5. Obtener el nombre de aquellos individuos que tienen el estatus máximo
+
+--	SELECT Nombre
+--	FROM Datos_S
+--	WHERE Status = (SELECT MAX(Status) FROM Datos_S)
+
+-- 6. Obtener aquellos proveedores cuya ciudad es la ciudad de S1 o S2
+
+PRIMERA POSIBILIDAD
+
+--	SELECT *
+--	FROM Datos_S
+--	WHERE Ciudad = 'Madrid'
+--	OR Ciudad = 'Sevilla'
+
+SEGUNDA (MEJOR)
+
+--	SELECT Nombre, Ciudad
+--	FROM Datos_S
+--	WHERE CIUDAD IN (SELECT Ciudad
+--		FROM Datos_S
+--		WHERE IdS = 'S1' OR IdS = 'S2');
+
+-- 7. Encontrar aquellos proveedores, cuyas piezas 
+-- que suministran están incluidas en el conjunto de piezas de J1
+
+--SELECT *
+--FROM Datos_S
+--WHERE datos_SPJ.IdS
+
+-- 9. 
+
+SELECT *
+FROM Datos_S
+WHERE Status IN(SELECT Status FROM Datos_S WHERE IdS='s7');
+

@@ -1,0 +1,63 @@
+--RELACION 1  DE SQL (SPJ)
+
+-- 1. Obtener todos los nombres de los proveedores
+
+-- 2. Obtener aquellos proveedores cuyo status es mayor que 20
+
+-- 3. Obtener el nombre de los proveedores que suministran la pieza P1
+
+-- 4. Obtener el nombre de los proveedores cuyo nombre acabe en "ez"
+
+/* 5. Obtener el nombre de aquellos individuos que tienen el estatus m�ximo*/
+
+/* 6. Obtener aquellos proveedores cuya ciudad es la ciudad de S1 o S2 */
+
+/* 7. Encontrar aquellos proveedores, cuyas piezas que suministran est�n incluidas en el conjunto de piezas de J1 */
+
+/* 8. Encontrar aquellos proyectos que no reciben ning�n suministro cantidad mayor o igual a 300 */
+
+/* 9. Encontrar aquellos proveedores que tienen un status mayor que el de S7*/
+
+/* 10. Encontrar aquellos proveedores que tienen un status mayor que el de todos los proveedores de Madrid*/
+
+/* 11. Encontrar aquellas piezas cuyo color es rojo, gris o blanco */
+
+/* 12. Encontrar aquellos proveedores (s�lo el co�digo de proveedor!) 
+que viven en la misma ciudad que el proveedor que suministra papel*/
+
+/* 13. Encontrar aquellos proveedores que no suministran papel */
+
+/* 14. Encontrar aquel proveedor que suministra todas las piezas 
+rojas */		
+--DIVISION--	
+					   
+/* 15. N�mero de suministros realizados al proyecto J2 por S5 */
+
+/* 16. Calcular la media de peso de las piezas cuyo nombre comience 
+por "Estuche" */
+
+/* 16.1 Calcular la media de peso de las piezas cuyo nombre comience 
+por "L" */
+
+/*17. Encontrar los c�digos y las cantidades (de env�os) m�ximas de 
+aquellos proveedores que han enviado piezas blancas, agrupados por el 
+c�digo de empleado y el c�digo de pieza */
+
+/* 18. Encontrar los c�digos de los proveedores, de las piezas y las 
+cantidades de env�os m�ximas de aquellos que han enviado/suministrado 
+piezas rojas, agrupados por c�digo de proveedor y c�digo de pieza, pero 
+s�lo de aquellos donde la m�xima cantidad sea mayor que 25 */
+ 
+/* 19. Obtener el nombre de todas las piezas en orden ascendente */
+
+/* 20. Obtener la tabla resumen del n�mero de suministros realizados a 
+cada uno de los proyectos realizados por cada vendedor */
+
+/* 21. Borrar todos los suministros asociados a J3 __ */
+
+/* 22. Insertar en la tabla de proveedores uno con: 
+		S1 __	Jos� Fern�ndez	2	Granada */
+
+/* 23. Modifica la ciudad de S1 __ a Madrid*/
+
+...
