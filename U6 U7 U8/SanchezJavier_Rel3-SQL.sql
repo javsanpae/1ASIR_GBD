@@ -42,7 +42,7 @@ WHERE IdCasa = 0;
 
 --7. A�adir un atributo a la tabla Autores llamado NumCasas de tipo entero.
 
-/*
+
 ALTER TABLE Autores
 ADD NumCasas INT
 */
